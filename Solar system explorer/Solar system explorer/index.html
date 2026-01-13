@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Penjelajah Alam Semesta</title>
+</head>
+<body>
+  <h1 class='logo'>
+    Jelajahi Alam Semesta
+    <span>@v4lenn_nn</span>
+  </h1>
+  <input class='planet9' id='pluto' type='radio' name='planet'>
+  <label class='menu pluto' for='pluto'>
+    <span class='preview'></span>
+    <span class='info'>
+      <span class='heading'><span class='pip'></span><span class='planet-name'>Pluto</span></span>
+      <span class='distance'>39.5 AU</span>
+    </span>
+  </label>
+  <input class='planet8' id='neptune' type='radio' name='planet'>
+  <label class='menu neptune' for='neptune'>
+    <span class='preview'></span>
+    <span class='info'>
+      <span class='heading'><span class='pip'></span><span class='planet-name'>Neptunus</span></span>
+      <span class='distance'>30.06 AU</span>
+    </span>
+  </label>
+  <input class='planet7' id='uranus' type='radio' name='planet'>
+  <label class='menu uranus' for='uranus'>
+    <span class='preview'></span>
+    <span class='info'>
+      <span class='heading'><span class='pip'></span><span class='planet-name'>Uranus</span></span>
+      <span class='distance'>19.18 AU</span>
+    </span>
+  </label>
+  <input class='planet6' id='saturn' type='radio' name='planet'>
+  <label class='menu saturn' for='saturn'>
+    <span class='preview'></span>
+    <span class='info'>
+      <span class='heading'><span class='pip'></span><span class='planet-name'>Saturnus</span></span>
+      <span class='distance'>9.539 AU</span>
+    </span>
+  </label>
+  <input class='planet5' id='jupiter' type='radio' name='planet'>
+  <label class='jupiter menu' for='jupiter'>
+    <span class='preview'></span>
+    <span class='info'>
+      <span class='heading'><span class='pip'></span><span class='planet-name'>Jupiter</span></span>
+      <span class='distance'>5.203 AU</span>
+    </span>
+  </label>
+  <input class='planet4' id='mars' type='radio' name='planet'>
+  <label class='mars menu' for='mars'>
+    <span class='preview'></span>
+    <span class='info'>
+      <span class='heading'><span class='pip'></span><span class='planet-name'>Mars</span></span>
+      <span class='distance'>1.524 AU</span>
+    </span>
+  </label>
+  <input class='planet3' id='earth' type='radio' name='planet' checked='checked'>
+  <label class='earth menu' for='earth'>
+    <span class='preview'></span>
+    <span class='info'>
+      <span class='heading'><span class='pip'></span><span class='planet-name'>Bumi</span></span>
+      <span class='distance'>1 AU</span>
+    </span>
+  </label>
+  <input class='planet2' id='venus' type='radio' name='planet'>
+  <label class='menu venus' for='venus'>
+    <span class='preview'></span>
+    <span class='info'>
+      <span class='heading'><span class='pip'></span><span class='planet-name'>Venus</span></span>
+      <span class='distance'>0.723 AU</span>
+    </span>
+  </label>
+  <input class='planet1' id='mercury' type='radio' name='planet'>
+  <label class='menu mercury' for='mercury'>
+    <span class='preview'></span>
+    <span class='info'>
+      <span class='heading'><span class='pip'></span><span class='planet-name'>Merkurius</span></span>
+      <span class='distance'>0.39 AU</span>
+    </span>
+  </label>
+  <div class='solar'>
+    <div class='solar_systm'>
+      <div class='mercury planet'>
+        <div class='mercury planet_description'>
+          <h2>Planet</h2>
+          <h1>Merkurius</h1>
+          <p>Planet yang paling dekat dengan Matahari. Ia mengelilingi Matahari lebih cepat daripada semua planet lainnya, itulah sebabnya orang Romawi menamakannya menurut dewa pembawa pesan mereka yang cepat.</p>
+          <label for='readMercury'>
+            <a>
+              Baca Selengkapny
+              <span>a</span>
+            </a>
+          </label>
+        </div>
+        <div class='overlay'></div>
+      </div>
+    </div>
+    <div class='solar_systm'>
+      <div class='planet venus'>
+        <div class='planet_description venus'>
+          <h2>Planet</h2>
+          <h1>Venus</h1>
+          <p>Dinamai berdasarkan dewi cinta dan kecantikan Romawi. Pada zaman kuno, Venus sering dianggap sebagai dua bintang yang berbeda, bintang senja dan bintang fajar.</p>
+          <label for='readVenus'>
+            <a>
+              Baca Selengkapny
+              <span>a</span>
+            </a>
+          </label>
+        </div>
+        <div class='overlay'></div>
+      </div>
+    </div>
+    <div class='solar_systm'>
+      <div class='earth planet'>
+        <div class='moon moon'>
+          <h3>Bulan</h3>
+          <h2>Bulan</h2>
+        </div>
+        <div class='m trajectory'></div>
+        <div class='earth planet_description'>
+          <h2>Planet</h2>
+          <h1>Bumi</h1>
+          <p>Bumi, rumah kita. Ia satu-satunya planet yang diketahui memiliki atmosfer yang mengandung oksigen bebas, lautan air cair di permukaannya, dan, tentu saja, kehidupan.</p>
+          <label for='readEarth'>
+            <a>
+              Baca Selengkapny
+              <span>a</span>
+            </a>
+          </label>
+        </div>
+        <div class='overlay'></div>
+      </div>
+    </div>
+    <div class='solar_systm'>
+      <div class='mars planet'>
+        <div class='deimos moon'>
+          <h3>Bulan</h3>
+          <h2>Deimos</h2>
+        </div>
+        <div class='d trajectory'></div>
+        <div class='moon phoebos'>
+          <h3>Bulan</h3>
+          <h2>Phoebos</h2>
+        </div>
+        <div class='p trajectory'></div>
+        <div class='mars planet_description'>
+          <h2>Planet</h2>
+          <h1>Mars</h1>
+          <p>Planet keempat dari Matahari dan planet terkecil kedua di tata surya. Dinamai berdasarkan dewa perang Romawi yang sering digambarkan sebagai "Planet Merah".</p>
+          <label for='readMars'>
+            <a>
+              Baca Selengkapny
+              <span>a</span>
+            </a>
+          </label>
+        </div>
+        <div class='overlay'></div>
+      </div>
+    </div>
+    <div class='solar_systm'>
+      <div class='jupiter planet'>
+        <div class='lo moon'>
+          <h3>Bulan</h3>
+          <h2>Io</h2>
+        </div>
+        <div class='europa moon'>
+          <h3>Bulan</h3>
+          <h2>Europa</h2>
+        </div>
+        <div class='ganymede moon'>
+          <h3>Bulan</h3>
+          <h2>Ganymede</h2>
+        </div>
+        <div class='lop trajectory'></div>
+        <div class='eu trajectory'></div>
+        <div class='ga trajectory'></div>
+        <div class='jupiter planet_description'>
+          <h2>Planet</h2>
+          <h1>Jupiter</h1>
+          <p>Jupiter adalah planet terbesar di tata surya. Sesuai dengan namanya, planet ini dinamai sesuai nama raja para dewa dalam mitologi Romawi.</p>
+          <label for='readJupiter'>
+            <a>
+              Baca Selengkapny
+              <span>a</span>
+            </a>
+          </label>
+        </div>
+        <div class='overlay'></div>
+      </div>
+    </div>
+    <div class='solar_systm'>
+      <div class='planet saturn'>
+        <div class='moon titan'>
+          <h3>Bulan</h3>
+          <h2>Titan</h2>
+        </div>
+        <div class='dione moon'>
+          <h3>Bulan</h3>
+          <h2>Dione</h2>
+        </div>
+        <div class='enceladus moon'>
+          <h3>Bulan</h3>
+          <h2>Enceladus</h2>
+        </div>
+        <div class='ti trajectory'></div>
+        <div class='di trajectory'></div>
+        <div class='enc trajectory'></div>
+        <div class='planet_description saturn'>
+          <h2>Planet</h2>
+          <h1>Saturnus</h1>
+          <p>Saturnus adalah planet keenam dari matahari dan planet terbesar kedua di tata surya. Saturnus adalah nama Romawi untuk Kronus, penguasa para Titan.</p>
+          <label for='readSaturn'>
+            <a>
+              Baca Selengkapny
+              <span>a</span>
+            </a>
+          </label>
+        </div>
+        <div class='overlay'></div>
+      </div>
+    </div>
+    <div class='solar_systm'>
+      <div class='planet uranus'>
+        <div class='miranda moon'>
+          <h3>Bulan</h3>
+          <h2>Miranda</h2>
+        </div>
+        <div class='ariel moon'>
+          <h3>Bulan</h3>
+          <h2>Ariel</h2>
+        </div>
+        <div class='moon umbriel'>
+          <h3>Bulan</h3>
+          <h2>Umbriel</h2>
+        </div>
+        <div class='mir trajectory'></div>
+        <div class='ari trajectory'></div>
+        <div class='trajectory umb'></div>
+        <div class='planet_description uranus'>
+          <h2>Planet</h2>
+          <h1>Uranus</h1>
+          <p>Planet pertama yang ditemukan oleh para ilmuwan. Planet ini terkenal karena kemiringannya yang dramatis, yang menyebabkan porosnya mengarah hampir tepat ke matahari.</p>
+          <label for='readUranus'>
+            <a>
+              Baca Selengkapny
+              <span>a</span>
+            </a>
+          </label>
+        </div>
+        <div class='overlay'></div>
+      </div>
+    </div>
+    <div class='solar_systm'>
+      <div class='neptune planet'>
+        <div class='moon triton'>
+          <h3>Bulan</h3>
+          <h2>Triton</h2>
+        </div>
+        <div class='moon proteus'>
+          <h3>Bulan</h3>
+          <h2>Proteus</h2>
+        </div>
+        <div class='moon nereid'>
+          <h3>Bulan</h3>
+          <h2>Nereid</h2>
+        </div>
+        <div class='trajectory tri'></div>
+        <div class='pro trajectory'></div>
+        <div class='ner trajectory'></div>
+        <div class='neptune planet_description'>
+          <h2>Planet</h2>
+          <h1>Neptunus</h1>
+          <p>Planet raksasa gas berwarna biru ini terkenal dengan anginnya yang super kencang, lebih kuat dari planet manapun di tata surya.</p>
+          <label for='readNeptune'>
+            <a>
+              Baca Selengkapny
+              <span>a</span>
+            </a>
+          </label>
+        </div>
+        <div class='overlay'></div>
+      </div>
+    </div>
+    <div class='solar_systm'>
+      <div class='planet pluto'>
+        <div class='planet_description pluto'>
+          <h2>Dwarf planet</h2>
+          <h1>Pluto</h1>
+          <p>Pluto, yang pernah dianggap sebagai planet kesembilan dan terjauh dari matahari, kini menjadi planet katai terbesar yang diketahui di tata surya.</p>
+          <label for='readPluto'>
+            <a>
+              Baca Selengkapny
+              <span>a</span>
+            </a>
+          </label>
+        </div>
+        <div class='overlay'>               </div>
+      </div>
+    </div>
+  </div>
+  <input class='read' id='readMercury' type='radio' name='mercuryRead'>
+  <label class='closeBig' for='closeMercury'></label>
+  <input class='read' id='closeMercury' type='radio' name='mercuryRead' title='Tutup panel Merkurius'>
+  <div class='panel'>
+    <h1>Merkurius</h1>
+    <p>Merkurius adalah planet yang paling dekat dengan Matahari. Karena itu, ia mengelilingi Matahari lebih cepat daripada planet-planet lain, itulah sebabnya orang Romawi menamakannya menurut dewa pembawa pesan mereka yang cepat.</p>
+    <p>Bangsa Sumeria sudah mengenal Merkurius setidaknya sejak 5.000 tahun lalu. Merkurius sering dikaitkan dengan Nabu, dewa tulisan. Planet ini juga diberi nama berbeda ketika muncul sebagai bintang pagi dan bintang senja. Para astronom Yunani menyadari bahwa kedua nama itu merujuk pada objek yang sama, dan Heraclitus sekitar 500 SM dengan benar menyangka bahwa Merkurius dan Venus mengorbit Matahari, bukan Bumi.</p>
+    <img src='https://i2.wp.com/www.astronomytrek.com/wp-content/uploads/2012/11/mercury-1.jpg?fit=678%2C381&amp;ssl=1' alt='Gambar Merkurius'>
+    <h2>Satu tahun di Merkurius hanya 88 hari.</h2>
+    <p>Satu hari matahari (waktu dari tengah hari ke tengah hari berikutnya di permukaan) di Merkurius setara dengan 176 hari Bumi, sedangkan hari siderisnya (waktu satu rotasi relatif terhadap titik tetap) berlangsung selama 59 hari Bumi. Merkurius hampir terkunci pasang terhadap Matahari sehingga rotasinya melambat hingga hampir selaras dengan orbitnya. Merkurius juga memiliki eksentrisitas orbit tertinggi di antara planet-planet, dengan jarak dari Matahari berkisar antara 46 hingga 70 juta km.</p>
+    <h2>Merkurius adalah planet terkecil di tata surya.</h2>
+    <p>Salah satu dari lima planet yang dapat dilihat dengan mata telanjang, Merkurius memiliki diameter ekuatorial sekitar 4.879 kilometer, dibandingkan 12.742 kilometer untuk Bumi.</p>
+    <h2>Merkurius adalah planet kedua terpadat.</h2>
+    <p>Meskipun kecil, Merkurius sangat padat. Setiap sentimeter kubik memiliki kerapatan sekitar 5,4 gram, hanya Bumi yang memiliki kerapatan lebih tinggi. Hal ini terutama karena Merkurius tersusun terutama dari logam berat dan batuan.</p>
+    <h2>Merkurius memiliki lipatan kerak.</h2>
+    <p>Ketika inti besi planet mendingin dan menyusut, permukaannya menjadi berkerut. Para ilmuwan menyebut kerutan ini 'Lobate Scarps'. Scarps ini dapat mencapai ketinggian sekitar satu mil dan memanjang ratusan mil.</p>
+    <br>
+  </div>
+  <input class='read' id='readVenus' type='radio' name='venusRead'>
+  <label class='closeBig' for='closeVenus'></label>
+  <input class='read' id='closeVenus' type='radio' name='venusRead' title='Tutup panel Venus'>
+  <div class='panel'>
+    <h1>Venus</h1>
+    <p>Venus, planet kedua dari Matahari, dinamai menurut dewi Romawi cinta dan kecantikan. Planet ini — satu-satunya yang dinamai menurut figur perempuan — mungkin diberi nama demikian karena bersinar paling terang di antara lima planet yang dikenal oleh para astronom kuno.</p>
+    <p>Pada zaman kuno, Venus sering dianggap sebagai dua bintang berbeda, bintang senja dan bintang pagi — yang muncul pertama kali saat matahari terbenam dan saat matahari terbit. Dalam bahasa Latin disebut Vesper dan Lucifer. Dalam tradisi Kristen, Lucifer (pembawa cahaya) kemudian dikaitkan dengan nama Setan. Namun, pengamatan pada era antariksa menunjukkan lingkungan Venus sangat keras dan tidak ramah; wahana antariksa umumnya tidak bertahan lama di permukaannya.</p>
+    <img src='https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2014/2-whatistheave.jpg' alt='Gambar Venus'>
+    <h2>Satu hari di Venus lebih lama daripada satu tahun.</h2>
+    <p>Venus membutuhkan 243 hari Bumi untuk satu rotasi penuh pada porosnya (hari sideris). Orbitnya mengelilingi Matahari memakan waktu 225 hari Bumi. Satu hari matahari di permukaan Venus (dari siang ke siang) berlangsung selama 117 hari Bumi.</p>
+    <h2>Venus berotasi berlawanan arah dibandingkan kebanyakan planet lainnya.</h2>
+    <p>Artinya Venus mengalami rotasi retrograde, berlawanan arah dengan rotasi Matahari. Salah satu kemungkinan penyebabnya adalah tumbukan besar di masa lalu yang mengubah arah rotasi. Venus juga berbeda karena tidak memiliki satelit alami.</p>
+    <h2>Venus adalah objek kedua yang paling terang di langit malam.</h2>
+    <p>Hanya Bulan yang lebih terang. Dengan magnitudo antara -3.8 hingga -4.6, Venus begitu terang sehingga dapat terlihat pada siang hari saat langit cerah.</p>
+    <h2>Tekanan atmosfer di Venus sekitar 92 kali lebih besar daripada di Bumi.</h2>
+    <p>Walaupun ukuran dan massanya mirip Bumi, benda kecil yang memasuki atmosfer Venus hancur sehingga permukaannya tidak memiliki banyak kawah kecil. Tekanan di permukaan Venus setara dengan tekanan di kedalaman laut di Bumi.</p>
+    <br>
+  </div>
+  <input class='read' id='readEarth' type='radio' name='earthRead'>
+  <label class='closeBig' for='closeEarth'></label>
+  <input class='read' id='closeEarth' type='radio' name='earthRead' title='Tutup panel Bumi'>
+  <div class='panel'>
+    <h1>Bumi</h1>
+    <p>Bumi, rumah kita, adalah planet ketiga dari Matahari. Ini satu-satunya planet yang diketahui memiliki atmosfer yang mengandung oksigen bebas, lautan air cair di permukaannya, dan tentu saja kehidupan.</p>
+    <p>Bumi adalah planet kelima terbesar di tata surya — lebih kecil dari empat raksasa gas (Jupiter, Saturnus, Uranus, dan Neptunus), tetapi lebih besar daripada tiga planet berbatu lainnya.</p>
+    <img src='https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350' alt='Gambar Bumi'>
+    <h2>Rotasi Bumi secara bertahap melambat.</h2>
+    <p>Pelambatan ini terjadi hampir tidak terasa, sekitar 17 milidetik per seratus tahun, meskipun laju perubahan tidak seragam. Akibatnya hari-hari menjadi sedikit lebih panjang, tetapi perubahan ini sangat lambat sehingga mungkin membutuhkan puluhan juta tahun agar panjang hari bertambah signifikan.</p>
+    <h2>Dulu Bumi dipercaya sebagai pusat alam semesta.</h2>
+    <p>Berdasarkan gerakan tampak Matahari dan planet-planet, ilmuwan kuno beranggapan Bumi diam sementara benda-benda langit bergerak melingkar mengelilinginya. Akhirnya, Copernicus mengemukakan gagasan bahwa Matahari berada di tengah, meskipun pemahaman modern kemudian memperluas tata surya dan kosmologi lebih jauh.</p>
+    <h2>Bumi memiliki medan magnet yang kuat.</h2>
+    <p>Fenomena ini disebabkan oleh inti planet yang kaya nikel-besi dan rotasi cepatnya. Medan magnet ini melindungi Bumi dari dampak angin matahari.</p>
+    <h2>Hanya ada satu satelit alami yang mengorbit Bumi.</h2>
+    <p>Dilihat dari rasio ukuran terhadap tubuh yang diorbitinya, Bulan adalah satelit terbesar di antara satelit planet lain di tata surya. Namun secara absolut, Bulan menempati urutan kelima sebagai satelit terbesar.</p>
+    <br>
+  </div>
+  <input class='read' id='readMars' type='radio' name='marsRead'>
+  <label class='closeBig' for='closeMars'></label>
+  <input class='read' id='closeMars' type='radio' name='marsRead' title='Tutup panel Mars'>
+  <div class='panel'>
+    <h1>Mars</h1>
+    <p>Mars adalah planet keempat dari Matahari. Sesuai warnanya yang kemerahan, orang Romawi menamakannya menurut dewa perang mereka. Orang Romawi mengikuti orang Yunani kuno yang juga menamainya menurut dewa perang mereka, Ares. Peradaban lain sering memberi nama berdasarkan warnanya — misalnya orang Mesir menyebutnya "Her Desher" yang berarti "yang merah", sementara astronom Tiongkok kuno menyebutnya "bintang api".</p>
+    <img src='https://1.bp.blogspot.com/-ou7Je3OVg6U/WYtxDqjNp_I/AAAAAAAACSQ/fsopS5VtFg4bmlv8hQNfiRYfJqTygCotQCLcBGAs/s2048/Martian%2Blandscape%2Bby%2BAmante%2BLombardi.jpg' alt='Gambar Mars'>
+    <h2>Mars dan Bumi memiliki luas daratan yang kurang lebih sama.</h2>
+    <p>Meskipun Mars hanya memiliki sekitar 15% volume dan sedikit lebih dari 10% massa Bumi, sekitar dua pertiga permukaan Bumi tertutup air. Gravitasi permukaan Mars hanya sekitar 37% dari Bumi (artinya Anda bisa melompat hampir tiga kali lebih tinggi di Mars).</p>
+    <h2>Mars menjadi rumah bagi gunung tertinggi di tata surya.</h2>
+    <p>Olympus Mons, sebuah gunung berapi perisai, memiliki ketinggian sekitar 21 km dan diameter sekitar 600 km. Meskipun terbentuk selama miliaran tahun, aliran lava yang relatif baru membuat banyak ilmuwan berpendapat gunung ini mungkin masih aktif.</p>
+    <h2>Hanya 18 misi ke Mars yang berhasil.</h2>
+    <p>Hingga September 2014 terdapat sekitar 40 misi ke Mars, termasuk pengorbit, pendarat, dan rover, tidak termasuk perlintasan. Kedatangan terbaru pada zaman itu termasuk misi Curiosity pada 2012, misi MAVEN yang tiba pada 22 September 2014, diikuti oleh pengorbit MOM Mangalyaan dari India yang tiba pada 24 September 2014. Misi-misi selanjutnya pada masa itu direncanakan termasuk ExoMars dari ESA dan misi pendarat Insight dari NASA.</p>
+    <h2>Mars memiliki badai debu terbesar di tata surya.</h2>
+    <p>Badai ini dapat berlangsung selama berbulan-bulan dan menutupi seluruh planet. Musim di Mars ekstrem karena orbitnya yang sangat elips dibandingkan sebagian besar planet lain di tata surya.</p>
+    <br>
+  </div>
+  <input class='read' id='readJupiter' type='radio' name='jupiterRead'>
+  <label class='closeBig' for='closeJupiter'></label>
+  <input class='read' id='closeJupiter' type='radio' name='jupiterRead' title='Tutup panel Jupiter'>
+  <div class='panel'>
+    <h1>Jupiter</h1>
+    <p>Jupiter adalah planet terbesar di tata surya. Sesuai namanya, planet ini dinamai menurut raja para dewa dalam mitologi Romawi; orang Yunani kuno menamainya Zeus.</p>
+    <p>Jupiter mengubah cara pandang kita terhadap alam semesta pada tahun 1610, ketika Galileo menemukan empat satelit besarnya — Io, Europa, Ganymede, dan Callisto — yang kini dikenal sebagai satelit Galilea. Ini merupakan kali pertama benda langit ditemukan mengorbit objek selain Bumi, menjadi bukti penting bagi pandangan Copernicus bahwa Bumi bukanlah pusat alam semesta.</p>
+    <img src='http://hanaleikauaivacation.com/wp-content/uploads/parser/jupiter-landscape-1.jpg' alt='Gambar Jupiter'>
+    <h2>Jupiter adalah objek keempat yang paling terang di tata surya.</h2>
+    <p>Hanya Matahari, Bulan, dan Venus yang lebih terang. Jupiter termasuk salah satu dari lima planet yang dapat dilihat dengan mata telanjang dari Bumi.</p>
+    <h2>Bangsa Babilonia kuno adalah yang pertama mencatat pengamatan Jupiter.</h2>
+    <p>Ini terjadi sekitar abad ke-7 atau ke-8 SM. Jupiter dinamai menurut raja dewa Romawi. Bagi orang Yunani, ia mewakili Zeus, dewa petir. Bangsa Mesopotamia melihat Jupiter sebagai dewa Marduk, dan suku Germanik mengidentifikasinya dengan Donar atau Thor.</p>
+    <h2>Jupiter memiliki hari terpendek di antara planet-planet.</h2>
+    <p>Jupiter berotasi pada porosnya setiap sekitar 9 jam 55 menit. Rotasi cepat ini menyebabkan bentuknya sedikit gepeng (oblate).</p>
+    <h2>Jupiter mengorbit Matahari setiap sekitar 11,8 tahun Bumi.</h2>
+    <p>Dari sudut pandang kita di Bumi, Jupiter tampak bergerak lambat di langit, membutuhkan bulan-bulan untuk berpindah dari satu rasi ke rasi lainnya.</p>
+    <br>
+  </div>
+  <input class='read' id='readSaturn' type='radio' name='saturnRead'>
+  <label class='closeBig' for='closeSaturn'></label>
+  <input class='read' id='closeSaturn' type='radio' name='saturnRead' title='Tutup panel Saturnus'>
+  <div class='panel'>
+    <h1>Saturnus</h1>
+    <p>Saturnus adalah planet keenam dari Matahari dan planet terbesar kedua di tata surya. Saturnus adalah nama Romawi untuk Cronus, penguasa para Titan dalam mitologi Yunani. Nama Saturnus juga menjadi akar kata untuk 'Saturday' dalam bahasa Inggris.</p>
+    <p>Saturnus adalah planet terjauh yang masih dapat dilihat dengan mata telanjang, tetapi melalui teleskop fitur paling mencoloknya—cincin Saturnus—dapat terlihat dengan jelas. Meskipun raksasa gas lain seperti Jupiter, Uranus, dan Neptunus juga memiliki cincin, cincin Saturnus adalah yang paling spektakuler.</p>
+    <img src='http://ak0.picdn.net/shutterstock/videos/4049260/thumb/1.jpg' alt='Gambar Saturnus'>
+    <h2>Saturnus dapat dilihat dengan mata telanjang.</h2>
+    <p>Ia adalah objek kelima yang paling terang di tata surya dan mudah dipelajari menggunakan teropong atau teleskop kecil.</p>
+    <h2>Saturnus dikenal oleh orang-orang kuno, termasuk bangsa Babilonia dan pengamat Asia Timur.</h2>
+    <p>Planet ini dinamai menurut dewa Romawi Saturnus, dan dikenal oleh orang Yunani sebagai Cronus.</p>
+    <h2>Saturnus adalah planet paling gepeng.</h2>
+    <p>Diameter kutubnya sekitar 90% dari diameter ekuatorialnya, akibat kerapatan rendah dan rotasi cepat. Saturnus berotasi sekali setiap sekitar 10 jam 34 menit, memberikan hari kedua terpendek di antara planet-planet tata surya.</p>
+    <h2>Saturnus mengorbit Matahari setiap sekitar 29,4 tahun Bumi.</h2>
+    <p>Pergerakannya yang lambat terhadap latar bintang membuatnya mendapat julukan dari suku Asyur kuno yang berarti "yang tertua dari yang tua".</p>
+    <br>
+  </div>
+  <input class='read' id='readUranus' type='radio' name='uranusRead'>
+  <label class='closeBig' for='closeUranus'></label>
+  <input class='read' id='closeUranus' type='radio' name='uranusRead' title='Tutup panel Uranus'>
+  <div class='panel'>
+    <h1>Uranus</h1>
+    <p>Uranus adalah planet ketujuh dari Matahari dan planet pertama yang ditemukan oleh ilmuwan. Meskipun Uranus dapat terlihat dengan mata telanjang, ia lama disangka bintang karena kecerlangannya yang redup dan orbitnya yang lambat. Planet ini terkenal karena kemiringannya yang ekstrem yang membuat porosnya hampir mengarah langsung ke Matahari.</p>
+    <p>Astronom Inggris William Herschel menemukan Uranus secara tidak sengaja pada 13 Maret 1781 saat mengamati bintang-bintang yang jauh lebih redup daripada yang dapat dilihat mata telanjang. Salah satu "bintang" itu tampak berbeda, dan dalam waktu setahun Uranus terbukti mengikuti orbit seperti planet.</p>
+    <img src='http://www.cosmosup.com/wp-content/uploads/2016/02/Uranus-Facts-About-the-Planet-Uranus-700x325.jpg' alt='Gambar Uranus'>
+    <h2>Uranus secara resmi ditemukan oleh Sir William Herschel pada 1781.</h2>
+    <p>Planet ini terlalu redup untuk dilihat oleh orang-orang kuno. Awalnya Herschel mengira itu adalah komet, tetapi beberapa tahun kemudian dinyatakan sebagai planet. Herschel sempat mengusulkan nama "Georgian Sidus" untuk menghormati Raja George III; nama Uranus kemudian diusulkan oleh astronom Johann Bode, yang berasal dari nama dewa Yunani Ouranos.</p>
+    <h2>Uranus berotasi sekali setiap 17 jam 14 menit.</h2>
+    <p>Planet ini berotasi dalam arah retrograde, berlawanan dengan arah rotasi Bumi dan sebagian besar planet lain.</p>
+    <h2>Uranus mengelilingi Matahari setiap 84 tahun Bumi.</h2>
+    <p>Pada bagian tertentu dari orbitnya, salah satu kutub Uranus menghadap langsung ke Matahari sehingga mengalami sekitar 42 tahun sinar matahari terus menerus, sementara bagian lain mengalami kegelapan panjang.</p>
+    <h2>Uranus sering disebut sebagai planet "raksasa es".</h2>
+    <p>Seperti raksasa gas lainnya, Uranus memiliki lapisan atas hidrogen dengan helium tercampur. Di bawahnya terdapat mantel berisi es yang mengelilingi inti batuan dan es. Atmosfer atas mengandung air, amonia, dan kristal metana yang memberi warna biru pucat pada planet ini.</p>
+    <br>
+  </div>
+  <input class='read' id='readNeptune' type='radio' name='neptuneRead'>
+  <label class='closeBig' for='closeNeptune'></label>
+  <input class='read' id='closeNeptune' type='radio' name='neptuneRead' title='Tutup panel Neptunus'>
+  <div class='panel'>
+    <h1>Neptunus</h1>
+    <p>Neptunus adalah planet kedelapan dari Matahari. Ia menjadi planet pertama yang keberadaannya diprediksi melalui perhitungan matematika sebelum benar-benar terlihat melalui teleskop pada 23 September 1846. Ketidakteraturan pada orbit Uranus mendorong astronom Prancis Alexis Bouvard untuk menduga adanya tarikan gravitasi dari objek lain. Astronom Jerman Johann Galle lalu menggunakan perhitungan tersebut untuk menemukan Neptunus lewat teleskop. Sebelumnya, Galileo sempat membuat sketsa benda ini tetapi menganggapnya sebagai bintang karena gerakannya yang lambat. Sesuai tradisi, planet ini diberi nama menurut dewa laut Romawi — Neptunus.</p>
+    <p>Hanya satu misi yang pernah terbang melewati Neptunus — Voyager 2 pada 1989 — sehingga sebagian besar studi dilakukan lewat teleskop berbasis Bumi. Masih banyak misteri tentang planet biru dingin ini, misalnya mengapa anginnya begitu kencang dan mengapa medan magnetnya bergeser dari pusatnya.</p>
+    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy8Dd14tbXAzh1iz-EJl9tulRwH7Bb-SxX6sXpKFDbqb-NKwpE' alt='Gambar Neptunus'>
+    <h2>Neptunus tidak dikenal oleh orang-orang kuno.</h2>
+    <p>Neptunus tidak dapat dilihat dengan mata telanjang dan pertama kali diamati pada 1846 setelah posisinya diprediksi secara matematis. Planet ini dinamai menurut dewa laut Romawi.</p>
+    <h2>Neptunus berputar pada porosnya dengan cepat.</h2>
+    <p>Awan khatulistiwa Neptunus membutuhkan sekitar 18 jam untuk satu rotasi. Hal ini karena Neptunus bukanlah benda padat.</p>
+    <h2>Neptunus adalah yang terkecil di antara raksasa es.</h2>
+    <p>Meski lebih kecil dari Uranus, Neptunus memiliki massa yang lebih besar. Di bawah atmosfer tebalnya terdapat lapisan gas hidrogen, helium, dan metana yang membungkus mantel es berisi air, amonia, dan metana beku. Inti dalam planet ini berupa batuan.</p>
+    <h2>Atmosfer Neptunus terdiri dari hidrogen dan helium, dengan sejumlah metana.</h2>
+    <p>Metana menyerap cahaya merah sehingga planet ini tampak berwarna biru. Awan tipis dan tinggi mengapung di atmosfer bagian atas.</p>
+  </div>
+  <input class='read' id='readPluto' type='radio' name='plutoRead'>
+  <label class='closeBig' for='closePluto'></label>
+  <input class='read' id='closePluto' type='radio' name='plutoRead' title='Tutup panel Pluto'>
+  <div class='panel'>
+    <h1>Pluto</h1>
+    <p>Pluto, yang dahulu dianggap planet kesembilan dan terjauh dari Matahari, kini menjadi planet kerdil terbesar yang diketahui di tata surya. Pluto juga termasuk salah satu anggota terbesar Sabuk Kuiper, zona gelap di luar orbit Neptunus yang diperkirakan berisi ratusan ribu benda berbatu dan berselimut es, masing-masing lebih besar dari 100 kilometer, serta triliunan komet.</p>
+    <p>Pada 2006, Pluto diklasifikasikan kembali sebagai planet kerdil, perubahan yang banyak dianggap sebagai penurunan status. Status planet Pluto telah menimbulkan kontroversi di komunitas ilmiah dan publik. Pada 2017, sekelompok ilmuwan (termasuk anggota misi New Horizons) mengusulkan definisi baru tentang keplanetan berdasarkan "objek bulat di ruang angkasa yang lebih kecil dari bintang", yang jika diterapkan akan memperluas jumlah planet di tata surya dari 8 menjadi sekitar 100.</p>
+    <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/asd.jpeg' alt='Gambar Pluto'>
+    <h2>Pluto dinamai menurut dewa dunia bawah dalam mitologi Yunani.</h2>
+    <p>Nama ini merupakan padanan lebih dikenal dari Hades dan diajukan oleh Venetia Burney, seorang gadis sekolah berusia sebelas tahun dari Oxford, Inggris.</p>
+    <h2>Pluto diklasifikasikan ulang dari planet menjadi planet kerdil pada 2006.</h2>
+    <p>Pada saat itu IAU meresmikan definisi planet sebagai "benda langit yang (a) mengorbit Matahari, (b) memiliki massa yang cukup sehingga gaya gravitasinya sendiri mengatasi gaya kaku sehingga memperoleh bentuk kesetimbangan hidrostatis (hampir bulat), dan (c) telah membersihkan lingkungan di sekitar orbitnya."</p>
+    <h2>Pluto ditemukan pada 18 Februari 1930 oleh Lowell Observatory.</h2>
+    <p>Selama 76 tahun antara penemuan Pluto dan saat diklasifikasikan ulang sebagai planet kerdil, Pluto menyelesaikan kurang dari sepertiga orbitnya mengelilingi Matahari.</p>
+    <h2>Pluto memiliki lima bulan yang diketahui.</h2>
+    <p>Bulan-bulan tersebut adalah Charon (ditemukan 1978), Hydra dan Nix (keduanya ditemukan 2005), Kerberos (awalnya dinamai P4, ditemukan 2011) dan Styx (awalnya P5, ditemukan 2012), dengan penamaan resmi S/2011 (134340) 1 dan S/2012 (134340) 1.</p>
+  </div>
+</body>
+</html>
+
+

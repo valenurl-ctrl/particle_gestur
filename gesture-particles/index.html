@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gesture Particle System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- UI Panel -->
+  <div id="ui">
+    <label>Particle Color</label>
+    <input type="color" id="colorPicker" value="#00ffff"/>
+
+    <label>Pattern</label>
+    <select id="patternSelect">
+      <option value="sphere">Sphere</option>
+      <option value="wave">Wave</option>
+      <option value="spiral">Spiral</option>
+    </select>
+
+    <button id="fullscreenBtn">Fullscreen</button>
+  </div>
+
+  <!-- Webcam (hidden) -->
+  <video id="video" autoplay playsinline></video>
+
+  <!-- Three.js -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
+
+  <!-- MediaPipe Hands -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+
+  <script src="main.js"></script>
+</body>
+</html>

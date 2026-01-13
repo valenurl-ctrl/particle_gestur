@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #000;
+  font-family: Arial, sans-serif;
+}
+
+#ui {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(0,0,0,0.6);
+  padding: 12px;
+  border-radius: 8px;
+  color: white;
+  z-index: 10;
+}
+
+#ui label {
+  display: block;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+#ui input, #ui select, #ui button {
+  width: 140px;
+  margin-top: 4px;
+}
