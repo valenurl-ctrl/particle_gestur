@@ -27,7 +27,7 @@ def display_lyrics(lyrics_list):
         print()
         time.sleep(pause)
         
-    print("\n🎵 Lagu selesai. Terima kasih sudah mendengarkan! 🎵")
+    print("\n🎵 ig:v4lenn_nn 🎵")
 
 if __name__ == "__main__":
     try:
