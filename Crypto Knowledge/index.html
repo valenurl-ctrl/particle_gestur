@@ -50,7 +50,7 @@
       background: var(--canvas);
       color: var(--ink);
       font-family: "DM Sans", sans-serif;
-      font-size: 14px;
+      font-size: 16px;
       min-height: 100vh;
     }
     button, input { font: inherit; }
@@ -91,7 +91,7 @@
     .brand-c { color: #63b3ff; }
     .brand-b { color: #82d4a4; }
     .top-actions { align-items: center; display: flex; gap: 15px; }
-    .market-status { align-items: center; color: var(--muted); display: flex; font-size: 12px; gap: 8px; }
+    .market-status { align-items: center; color: var(--muted); display: flex; font-size: 13px; gap: 8px; }
     .status-dot { background: #50ae72; border-radius: 50%; height: 7px; width: 7px; }
     .profile-anchor { position: relative; }
     .avatar {
@@ -101,7 +101,11 @@
     .avatar[aria-expanded="true"] { background: var(--ink); color: var(--green-bright); }
     .avatar-photo, .profile-menu-photo { height: 100%; inset: 0; object-fit: cover; position: absolute; width: 100%; }
     .avatar-photo[hidden], .profile-menu-photo[hidden] { display: none; }
-    .avatar-initial { position: relative; z-index: 1; }
+    .profile-silhouette { inset: 0; position: absolute; }
+    .profile-silhouette[hidden] { display: none; }
+    .profile-silhouette::before, .profile-silhouette::after { background: currentColor; content: ""; position: absolute; }
+    .profile-silhouette::before { border-radius: 50%; height: 28%; left: 36%; top: 19%; width: 28%; }
+    .profile-silhouette::after { border-radius: 50% 50% 0 0; bottom: 0; height: 38%; left: 20%; width: 60%; }
     .profile-menu {
       background: white; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
       padding: 9px; position: absolute; right: 0; top: calc(100% + 11px); transform-origin: top right; width: 258px; z-index: 8;
@@ -109,13 +113,13 @@
     .profile-menu[hidden] { display: none; }
     .profile-menu-head { align-items: center; border-bottom: 1px solid var(--line); display: flex; gap: 10px; padding: 7px 7px 13px; }
     .profile-menu-avatar { align-items: center; background: var(--ink); border-radius: 50%; color: var(--green-bright); display: grid; font-weight: 700; height: 36px; overflow: hidden; position: relative; width: 36px; }
-    .profile-menu-name { font-size: 12px; font-weight: 700; margin: 0 0 3px; }
-    .profile-menu-email { color: var(--muted); font-size: 10px; margin: 0; }
+    .profile-menu-name { font-size: 13px; font-weight: 700; margin: 0 0 3px; }
+    .profile-menu-email { color: var(--muted); font-size: 11px; margin: 0; }
     .profile-menu-list { display: grid; gap: 3px; padding-top: 7px; }
     .profile-menu-item { background: transparent; border: 0; border-radius: 10px; cursor: pointer; display: flex; flex-direction: column; gap: 3px; padding: 9px 10px; text-align: left; width: 100%; }
     .profile-menu-item:hover, .profile-menu-item:focus-visible { background: var(--surface-soft); outline: none; }
-    .profile-menu-item strong { font-size: 12px; }
-    .profile-menu-item span { color: var(--muted); font-size: 10px; }
+    .profile-menu-item strong { font-size: 13px; }
+    .profile-menu-item span { color: var(--muted); font-size: 11px; }
     .account-dialog { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); color: var(--ink); max-height: min(720px, calc(100vh - 32px)); max-width: 460px; padding: 22px; width: calc(100% - 28px); }
     .account-dialog::backdrop { background: rgba(23, 33, 29, .35); backdrop-filter: blur(3px); }
     .account-dialog-header { align-items: flex-start; display: flex; justify-content: space-between; margin-bottom: 20px; }
@@ -123,11 +127,11 @@
     .account-dialog-title { font: 600 21px "Space Grotesk", sans-serif; margin: 0; }
     .dialog-close { align-items: center; background: var(--surface-soft); border: 1px solid var(--line); border-radius: 10px; cursor: pointer; display: grid; font-size: 17px; height: 34px; width: 34px; }
     .account-form { display: grid; gap: 14px; }
-    .account-form label { color: #65716a; display: grid; font-size: 11px; font-weight: 600; gap: 7px; }
+    .account-form label { color: #65716a; display: grid; font-size: 12px; font-weight: 600; gap: 7px; }
     .account-form input, .account-form select, .account-form textarea { background: var(--surface-soft); border: 1px solid var(--line); border-radius: 10px; color: var(--ink); font-size: 13px; outline: none; padding: 10px 11px; width: 100%; }
     .account-form input:focus, .account-form select:focus, .account-form textarea:focus { border-color: #75a58b; box-shadow: 0 0 0 3px rgba(20, 108, 75, .1); }
     .account-form textarea { min-height: 110px; resize: vertical; }
-    .account-action { background: var(--ink); border: 0; border-radius: 10px; color: white; cursor: pointer; font-size: 12px; font-weight: 700; min-height: 40px; padding: 0 14px; }
+    .account-action { background: var(--ink); border: 0; border-radius: 10px; color: white; cursor: pointer; font-size: 13px; font-weight: 700; min-height: 40px; padding: 0 14px; }
     .account-action:hover { background: var(--green); }
     .profile-photo-row { align-items: center; display: flex; gap: 12px; }
     .profile-photo-preview { align-items: center; background: var(--ink); border-radius: 50%; color: var(--green-bright); display: grid; flex: 0 0 auto; font-size: 15px; font-weight: 700; height: 52px; justify-items: center; overflow: hidden; position: relative; width: 52px; }
@@ -135,17 +139,17 @@
     .profile-photo-preview img[hidden] { display: none; }
     .profile-photo-actions { display: flex; flex-wrap: wrap; gap: 7px; }
     .profile-photo-actions .account-action, .profile-photo-remove { min-height: 34px; }
-    .profile-photo-remove { background: transparent; border: 1px solid var(--line); border-radius: 10px; color: #65716a; cursor: pointer; font-size: 11px; padding: 0 10px; }
+    .profile-photo-remove { background: transparent; border: 1px solid var(--line); border-radius: 10px; color: #65716a; cursor: pointer; font-size: 12px; padding: 0 10px; }
     .profile-photo-remove:disabled { cursor: not-allowed; opacity: .45; }
-    .account-note { color: var(--muted); font-size: 10px; line-height: 1.5; margin: 0; }
+    .account-note { color: var(--muted); font-size: 11px; line-height: 1.5; margin: 0; }
     .account-card { background: var(--surface-soft); border: 1px solid var(--line); border-radius: 12px; margin-bottom: 10px; padding: 14px; }
     .account-card span, .account-card strong { display: block; }
-    .account-card span { color: var(--muted); font-size: 10px; margin-bottom: 6px; }
+    .account-card span { color: var(--muted); font-size: 11px; margin-bottom: 6px; }
     .account-card strong { font: 600 15px "Space Grotesk", sans-serif; }
     .account-toggle { align-items: center; border: 1px solid var(--line); border-radius: 12px; cursor: pointer; display: flex !important; flex-direction: row !important; justify-content: space-between; padding: 13px; }
     .account-toggle span { display: grid; gap: 5px; }
-    .account-toggle strong { color: var(--ink); font-size: 12px; }
-    .account-toggle small { color: var(--muted); font-size: 10px; font-weight: 400; }
+    .account-toggle strong { color: var(--ink); font-size: 13px; }
+    .account-toggle small { color: var(--muted); font-size: 11px; font-weight: 400; }
     .account-toggle input { appearance: none; background: #c8ceca; border: 0; border-radius: 999px; cursor: pointer; flex: 0 0 42px; height: 26px; margin: 0; padding: 0; position: relative; transition: background .18s ease; width: 42px; }
     .account-toggle input::before { background: #fff; border-radius: 50%; box-shadow: 0 1px 3px rgba(0, 0, 0, .22); content: ""; height: 20px; left: 3px; position: absolute; top: 3px; transition: transform .18s ease; width: 20px; }
     .account-toggle input:checked { background: #34c759; }
@@ -153,7 +157,7 @@
     .account-toggle input:focus-visible { box-shadow: 0 0 0 3px rgba(52, 199, 89, .28); outline: none; }
     .layout { display: grid; gap: 30px; grid-template-columns: 210px minmax(0, 1fr); margin: 0 auto; max-width: 1536px; padding: 34px 5.2vw 54px; }
     .sidebar { align-self: start; position: sticky; top: 106px; }
-    .side-label { color: #9aa39d; font-size: 10px; font-weight: 700; letter-spacing: 1.25px; margin: 17px 0 10px 12px; text-transform: uppercase; }
+    .side-label { color: #9aa39d; font-size: 11px; font-weight: 700; letter-spacing: 1.25px; margin: 17px 0 10px 12px; text-transform: uppercase; }
     .side-nav { display: grid; gap: 5px; }
     .nav-item {
       align-items: center; background: transparent; border: 0; border-radius: 12px; color: #76817a;
@@ -165,24 +169,24 @@
     .nav-icon svg { height: 17px; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; fill: none; width: 17px; }
     .sidebar-note { background: var(--ink); border-radius: var(--radius); color: white; margin-top: 36px; overflow: hidden; padding: 17px; position: relative; }
     .sidebar-note::after { background: var(--green-bright); border-radius: 50%; content: ""; height: 88px; opacity: .9; position: absolute; right: -36px; top: -46px; width: 88px; }
-    .note-kicker { color: #b4c3ba; font-size: 10px; letter-spacing: .9px; text-transform: uppercase; }
+    .note-kicker { color: #b4c3ba; font-size: 11px; letter-spacing: .9px; text-transform: uppercase; }
     .sidebar-note p { font-family: "Space Grotesk", sans-serif; font-size: 15px; font-weight: 600; line-height: 1.5; margin: 12px 0 15px; max-width: 145px; }
-    .note-link { background: transparent; border: 0; color: var(--green-bright); cursor: pointer; font-size: 12px; font-weight: 700; padding: 0; text-decoration: none; }
+    .note-link { background: transparent; border: 0; color: var(--green-bright); cursor: pointer; font-size: 13px; font-weight: 700; padding: 0; text-decoration: none; }
     main { min-width: 0; }
     .welcome { align-items: flex-end; display: flex; justify-content: space-between; margin: 4px 0 26px; }
-    .eyebrow { color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: 1.1px; margin: 0 0 9px; text-transform: uppercase; }
+    .eyebrow { color: var(--green); font-size: 13px; font-weight: 700; letter-spacing: 1.1px; margin: 0 0 9px; text-transform: uppercase; }
     h1, h2, h3, p { margin-top: 0; }
     h1 { font: 600 29px/1.2 "Space Grotesk", sans-serif; letter-spacing: -.8px; margin-bottom: 8px; }
-    .welcome-copy { color: var(--muted); margin: 0; }
-    .date-chip { align-items: center; border: 1px solid var(--line); border-radius: 12px; color: #68736c; display: flex; font-size: 12px; gap: 8px; padding: 10px 12px; white-space: nowrap; }
+    .welcome-copy { color: var(--muted); font-size: 15px; margin: 0; }
+    .date-chip { align-items: center; border: 1px solid var(--line); border-radius: 12px; color: #68736c; display: flex; font-size: 13px; gap: 8px; padding: 10px 12px; white-space: nowrap; }
     .stats { display: grid; gap: 14px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-bottom: 20px; }
     .stat-card { background: var(--surface); border: 1px solid #edf0ec; border-radius: var(--radius); min-height: 108px; padding: 17px 18px; }
-    .stat-top { align-items: center; color: var(--muted); display: flex; font-size: 12px; justify-content: space-between; }
+    .stat-top { align-items: center; color: var(--muted); display: flex; font-size: 13px; justify-content: space-between; }
     .stat-icon { align-items: center; background: #edf5e8; border-radius: 10px; color: var(--green); display: grid; height: 31px; justify-items: center; width: 31px; }
     .stat-icon svg { fill: none; height: 16px; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; width: 16px; }
     .stat-value { align-items: baseline; display: flex; gap: 9px; margin-top: 12px; }
     .stat-value strong { font: 600 21px "Space Grotesk", sans-serif; letter-spacing: -.5px; }
-    .stat-change { font-size: 11px; font-weight: 700; }
+    .stat-change { font-size: 13px; font-weight: 700; }
     .positive { color: var(--green); }
     .negative { color: var(--red); }
     .content-grid { align-items: start; display: grid; grid-template-columns: minmax(0, 1fr); }
@@ -190,7 +194,7 @@
     .layout.asset-detail-active { grid-template-columns: minmax(0, 1fr); }
     .layout.asset-detail-active .sidebar { display: none; }
     .asset-view { margin: 0 auto; max-width: 1050px; width: 100%; }
-    .back-market-button { align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; color: var(--green); cursor: pointer; display: inline-flex; font-size: 12px; font-weight: 700; gap: 8px; margin: 0 0 14px; min-height: 40px; padding: 0 13px; position: sticky; top: 82px; z-index: 4; }
+    .back-market-button { align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; color: var(--green); cursor: pointer; display: inline-flex; font-size: 13px; font-weight: 700; gap: 8px; margin: 0 0 14px; min-height: 40px; padding: 0 13px; position: sticky; top: 82px; z-index: 4; }
     .back-market-button:hover { background: var(--surface-soft); }
     .asset-view .detail-panel { padding: 24px; }
     .asset-view .chart-shell { height: 190px; }
@@ -204,35 +208,35 @@
     .market-panel { overflow: hidden; }
     .panel-head { align-items: center; display: flex; justify-content: space-between; padding: 20px 20px 15px; }
     .panel-heading { font: 600 16px "Space Grotesk", sans-serif; margin: 0; }
-    .panel-subtitle { color: var(--muted); font-size: 11px; margin: 5px 0 0; }
-    .text-button { background: transparent; border: 0; color: var(--green); cursor: pointer; font-size: 11px; font-weight: 700; padding: 7px 0 7px 7px; }
+    .panel-subtitle { color: var(--muted); font-size: 13px; margin: 5px 0 0; }
+    .text-button { background: transparent; border: 0; color: var(--green); cursor: pointer; font-size: 13px; font-weight: 700; padding: 7px 0 7px 7px; }
     .market-tools { align-items: center; border-bottom: 1px solid var(--line); display: flex; gap: 10px; justify-content: space-between; padding: 0 20px 14px; }
     .filters { display: flex; gap: 4px; overflow-x: auto; }
-    .filter-button { background: transparent; border: 0; border-radius: 10px; color: #849087; cursor: pointer; font-size: 11px; padding: 8px 10px; white-space: nowrap; }
+    .filter-button { background: transparent; border: 0; border-radius: 10px; color: #849087; cursor: pointer; font-size: 13px; padding: 8px 10px; white-space: nowrap; }
     .filter-button.active { background: #eaf3e7; color: var(--green); font-weight: 700; }
     .search { align-items: center; background: var(--surface-soft); border: 1px solid var(--line); border-radius: 11px; display: flex; gap: 7px; min-width: 145px; padding: 0 9px; }
     .search svg { fill: none; flex: 0 0 auto; height: 14px; stroke: #87928b; stroke-linecap: round; stroke-width: 1.8; width: 14px; }
-    .search input { background: transparent; border: 0; color: var(--ink); font-size: 11px; min-width: 0; outline: 0; padding: 9px 0; width: 100%; }
+    .search input { background: transparent; border: 0; color: var(--ink); font-size: 13px; min-width: 0; outline: 0; padding: 9px 0; width: 100%; }
     .table-wrap { overflow-x: auto; }
     table { border-collapse: collapse; min-width: 490px; text-align: left; width: 100%; }
-    th { color: #9aa39d; font-size: 10px; font-weight: 600; padding: 13px 10px; white-space: nowrap; }
+    th { color: #9aa39d; font-size: 13px; font-weight: 600; padding: 13px 10px; white-space: nowrap; }
     th:first-child, td:first-child { padding-left: 20px; }
     th:last-child, td:last-child { padding-right: 20px; text-align: right; }
-    td { border-top: 1px solid #f0f2ef; font-size: 12px; padding: 12px 10px; white-space: nowrap; }
+    td { border-top: 1px solid #f0f2ef; font-size: 13px; padding: 12px 10px; white-space: nowrap; }
     tbody tr { cursor: pointer; transition: background .16s ease; }
     tbody tr:hover { background: #f8faf7; }
     tbody tr.selected { background: #f1f7ee; }
     .coin-name-cell { align-items: center; display: flex; gap: 10px; }
-    .coin-logo-wrap { align-items: center; background: var(--coin-color, #718078); border-radius: 50%; color: white; display: inline-flex; flex: 0 0 auto; font-size: 11px; font-weight: 700; height: 32px; justify-content: center; overflow: hidden; position: relative; width: 32px; }
+    .coin-logo-wrap { align-items: center; background: var(--coin-color, #718078); border-radius: 50%; color: white; display: inline-flex; flex: 0 0 auto; font-size: 13px; font-weight: 700; height: 32px; justify-content: center; overflow: hidden; position: relative; width: 32px; }
     .coin-logo { height: 100%; inset: 0; object-fit: cover; position: absolute; width: 100%; }
     .coin-name { font-weight: 700; }
-    .coin-symbol { color: #9aa39d; font-size: 10px; margin-top: 3px; }
+    .coin-symbol { color: #9aa39d; font-size: 12px; margin-top: 3px; }
     .price-cell { font-weight: 600; }
-    .change-pill { border-radius: 7px; display: inline-block; font-size: 10px; font-weight: 700; padding: 5px 7px; }
+    .change-pill { border-radius: 7px; display: inline-block; font-size: 12px; font-weight: 700; padding: 5px 7px; }
     .change-pill.up { background: #edf6e8; color: #298258; }
     .change-pill.down { background: #fbefed; color: #cc6158; }
     .detail-panel { padding: 20px; }
-    .detail-topline { align-items: center; color: #8b958e; display: flex; font-size: 11px; justify-content: space-between; }
+    .detail-topline { align-items: center; color: #8b958e; display: flex; font-size: 13px; justify-content: space-between; }
     .detail-actions { align-items: center; display: flex; gap: 8px; }
     .favorite-button { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; color: #87928a; cursor: pointer; font-size: 17px; height: 31px; line-height: 1; width: 34px; }
     .favorite-button.active { background: #f1f7e7; border-color: #dce9cb; color: #53852e; }
@@ -241,31 +245,31 @@
     .detail-logo-wrap { align-items: center; background: var(--coin-color, #718078); border-radius: 50%; color: white; display: inline-flex; flex: 0 0 auto; font-size: 15px; font-weight: 700; height: 48px; justify-content: center; overflow: hidden; position: relative; width: 48px; }
     .detail-logo { height: 100%; inset: 0; object-fit: cover; position: absolute; width: 100%; }
     .detail-name { font: 600 18px "Space Grotesk", sans-serif; margin: 0 0 3px; }
-    .detail-symbol { color: var(--muted); font-size: 11px; }
+    .detail-symbol { color: var(--muted); font-size: 13px; }
     .detail-price { font: 600 29px "Space Grotesk", sans-serif; letter-spacing: -.8px; margin-bottom: 6px; }
-    .detail-change { align-items: center; display: flex; font-size: 11px; gap: 7px; }
+    .detail-change { align-items: center; display: flex; font-size: 13px; gap: 7px; }
     .chart-shell { background: linear-gradient(180deg, #f7fbf5, rgba(247,251,245,0)); border-radius: 12px; height: 116px; margin: 15px 0 8px; overflow: hidden; position: relative; }
     #price-chart { display: block; height: 100%; width: 100%; }
-    .chart-label { color: #9aa39d; font-size: 9px; left: 10px; position: absolute; top: 8px; }
+    .chart-label { color: #9aa39d; font-size: 11px; left: 10px; position: absolute; top: 8px; }
     .periods { display: flex; gap: 3px; justify-content: space-between; overflow-x: auto; padding: 1px; scrollbar-width: thin; }
-    .period-button { background: transparent; border: 0; border-radius: 7px; color: #8e9891; cursor: pointer; flex: 0 0 auto; font-size: 9px; padding: 6px 7px; }
+    .period-button { background: transparent; border: 0; border-radius: 7px; color: #8e9891; cursor: pointer; flex: 0 0 auto; font-size: 11px; padding: 6px 7px; }
     .period-button.active { background: #eaf3e7; color: var(--green); font-weight: 700; }
     .detail-stats { border-top: 1px solid var(--line); display: grid; gap: 14px 10px; grid-template-columns: 1fr 1fr; margin-top: 15px; padding-top: 16px; }
-    .detail-stat span { color: #8a958d; display: block; font-size: 10px; margin-bottom: 5px; }
-    .detail-stat strong { font-size: 11px; font-weight: 700; }
-    .description { border-top: 1px solid var(--line); color: #77817b; font-size: 11px; line-height: 1.65; margin: 17px 0 0; padding-top: 14px; }
-    .source-note { color: #9aa39d; font-size: 10px; line-height: 1.5; margin: 16px 2px 0; }
+    .detail-stat span { color: #8a958d; display: block; font-size: 12px; margin-bottom: 5px; }
+    .detail-stat strong { font-size: 13px; font-weight: 700; }
+    .description { border-top: 1px solid var(--line); color: #4d5953; font-size: 13px; line-height: 1.65; margin: 17px 0 0; padding-top: 14px; }
+    .source-note { color: #9aa39d; font-size: 12px; line-height: 1.5; margin: 16px 2px 0; }
     .empty-state { color: var(--muted); padding: 32px 20px; text-align: center; }
     .toast { background: var(--ink); border-radius: 12px; bottom: 22px; color: white; left: 50%; opacity: 0; padding: 11px 15px; pointer-events: none; position: fixed; transform: translate(-50%, 8px); transition: .2s ease; z-index: 10; }
     .toast.show { opacity: 1; transform: translate(-50%, 0); }
     .site-footer { background: var(--ink); color: white; }
     .site-footer-inner { margin: 0 auto; max-width: 1536px; padding: 34px 5.2vw 22px; }
     .footer-columns { display: grid; gap: 28px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .footer-column h2 { color: #dce7df; font: 600 12px "Space Grotesk", sans-serif; margin: 0 0 12px; }
-    .footer-column p, .footer-column a { color: #aab8af; font-size: 11px; line-height: 1.7; margin: 0; text-decoration: none; }
+    .footer-column h2 { color: #dce7df; font: 600 13px "Space Grotesk", sans-serif; margin: 0 0 12px; }
+    .footer-column p, .footer-column a { color: #aab8af; font-size: 12px; line-height: 1.7; margin: 0; text-decoration: none; }
     .footer-column a:hover { color: var(--green-bright); }
     .footer-socials { display: flex; flex-wrap: wrap; gap: 7px 14px; }
-    .footer-legal { border-top: 1px solid rgba(255, 255, 255, .12); color: #87958c; font-size: 10px; margin: 25px 0 0; padding-top: 16px; }
+    .footer-legal { border-top: 1px solid rgba(255, 255, 255, .12); color: #87958c; font-size: 11px; margin: 25px 0 0; padding-top: 16px; }
     :root[data-theme="dark"] .topbar { background: rgba(23, 33, 29, .9); border-color: rgba(57, 72, 62, .8); }
     :root[data-theme="dark"] .brand-mark { background: #2b3930; }
     :root[data-theme="dark"] .brand-name { background: #f4f6f2; border-radius: 7px; padding: 3px 6px; }
@@ -290,6 +294,7 @@
     :root[data-theme="dark"] .favorite-button.active { background: #294236; border-color: #3c6149; color: #a4e0ba; }
     :root[data-theme="dark"] .rank-badge { background: var(--surface-soft); color: var(--muted); }
     :root[data-theme="dark"] .detail-topline, :root[data-theme="dark"] .chart-label, :root[data-theme="dark"] .detail-stat span, :root[data-theme="dark"] .source-note { color: var(--muted); }
+    :root[data-theme="dark"] .description { color: #dfe8e1; }
     :root[data-theme="dark"] .chart-shell { background: linear-gradient(180deg, #202c25, rgba(32, 44, 37, 0)); }
     :root[data-theme="dark"] .period-button { color: var(--muted); }
     :root[data-theme="dark"] .period-button.active { background: #294236; color: #a4e0ba; }
@@ -347,10 +352,11 @@
       <div class="top-actions">
         <div class="market-status" title="Harga dan grafik diperbarui otomatis setiap 60 detik"><span class="status-dot"></span><span id="connection-label">Menghubungkan pasar</span></div>
         <div class="profile-anchor" id="profile-anchor">
-          <button class="avatar" id="profile-trigger" type="button" aria-label="Buka menu profil" aria-haspopup="menu" aria-expanded="false" aria-controls="profile-menu"><img class="avatar-photo" id="profile-trigger-image" alt="" hidden><span class="avatar-initial" id="profile-trigger-initial">V</span></button>
+          <button class="avatar" id="profile-trigger" type="button" aria-label="Buka menu profil" aria-haspopup="menu" aria-expanded="false" aria-controls="profile-menu"><img class="avatar-photo" id="profile-trigger-image" alt="" hidden><span class="profile-silhouette" id="profile-trigger-placeholder" aria-hidden="true"></span></button>
           <div class="profile-menu" id="profile-menu" role="menu" aria-label="Menu profil" hidden>
-            <div class="profile-menu-head"><span class="profile-menu-avatar"><img class="profile-menu-photo" id="profile-menu-photo" alt="" hidden><span id="profile-menu-avatar">V</span></span><div><p class="profile-menu-name" id="profile-menu-name">Pengguna</p><p class="profile-menu-email" id="profile-menu-email">Profil lokal</p></div></div>
+            <div class="profile-menu-head"><span class="profile-menu-avatar"><img class="profile-menu-photo" id="profile-menu-photo" alt="" hidden><span class="profile-silhouette" id="profile-menu-placeholder" aria-hidden="true"></span></span><div><p class="profile-menu-name" id="profile-menu-name">Pengguna</p><p class="profile-menu-email" id="profile-menu-email">Profil lokal</p></div></div>
             <div class="profile-menu-list">
+              <button class="profile-menu-item" type="button" role="menuitem" data-account-section="login"><strong>Login</strong><span>Masuk ke akun Cryptobross</span></button>
               <button class="profile-menu-item" type="button" role="menuitem" data-account-section="profile"><strong>Profil</strong><span>Nama dan informasi akun</span></button>
               <button class="profile-menu-item" type="button" role="menuitem" data-account-section="date"><strong>Tanggal</strong><span>Tanggal dan waktu saat ini</span></button>
               <button class="profile-menu-item" type="button" role="menuitem" data-account-section="settings"><strong>Pengaturan</strong><span>Preferensi pembaruan pasar</span></button>
@@ -521,6 +527,7 @@
     const chartHistoryFailures = new Set();
     let chartPeriod = '1W';
     const MARKET_REFRESH_OPTIONS = [
+      { milliseconds: 1_000, label: '1 detik' },
       { milliseconds: 30_000, label: '30 detik' },
       { milliseconds: 60_000, label: '1 menit' },
       { milliseconds: 300_000, label: '5 menit' }
@@ -901,42 +908,48 @@
     function updateProfileIdentity() {
       const name = localStorage.getItem('cryptobross-profile-name') || 'Pengguna';
       const email = localStorage.getItem('cryptobross-profile-email') || 'Profil lokal';
-      const initials = name.trim().charAt(0).toLocaleUpperCase(CryptoBrossI18n.getLocale()) || 'P';
       const photo = localStorage.getItem('cryptobross-profile-photo');
       const triggerImage = document.querySelector('#profile-trigger-image');
       const menuImage = document.querySelector('#profile-menu-photo');
+      const triggerPlaceholder = document.querySelector('#profile-trigger-placeholder');
+      const menuPlaceholder = document.querySelector('#profile-menu-placeholder');
       triggerImage.hidden = !photo;
       menuImage.hidden = !photo;
+      triggerPlaceholder.hidden = Boolean(photo);
+      menuPlaceholder.hidden = Boolean(photo);
       if (photo) {
         triggerImage.src = photo;
         menuImage.src = photo;
       }
-      document.querySelector('#profile-trigger-initial').hidden = Boolean(photo);
       profileTrigger.title = name;
-      document.querySelector('#profile-menu-avatar').textContent = initials;
       document.querySelector('#profile-menu-name').textContent = name;
       document.querySelector('#profile-menu-email').textContent = email;
     }
 
     function openAccountSection(section, sourceElement = profileTrigger) {
-      const titles = { profile: ['Akun', 'Profil'], date: ['Informasi', 'Tanggal'], settings: ['Preferensi', 'Pengaturan'], customer: ['Bantuan', 'Customer Service'] };
+      const titles = { login: ['Akun', 'Login'], profile: ['Akun', 'Profil'], date: ['Informasi', 'Tanggal'], settings: ['Preferensi', 'Pengaturan'], customer: ['Bantuan', 'Customer Service'] };
       const [label, title] = titles[section];
       document.querySelector('#account-dialog-label').textContent = label;
       document.querySelector('#account-dialog-title').textContent = title;
 
-      if (section === 'profile') {
-        accountDialogContent.innerHTML = `<form class="account-form" id="profile-form"><div class="profile-photo-row"><span class="profile-photo-preview"><span id="profile-photo-initial">P</span><img id="profile-photo-preview" alt="Pratinjau foto profil" hidden></span><div class="profile-photo-actions"><button class="account-action" id="choose-profile-photo" type="button">Pilih foto</button><button class="profile-photo-remove" id="remove-profile-photo" type="button">Hapus foto</button><input id="profile-photo-file" type="file" accept="image/*" hidden><p class="account-note" style="flex-basis:100%">Gambar akan dipotong persegi dan diperkecil.</p></div></div><label>Nama tampilan<input id="profile-name-input" name="name" autocomplete="name" maxlength="60" required></label><label>Email<input id="profile-email-input" name="email" type="email" autocomplete="email" placeholder="nama@email.com"></label><button class="account-action" type="submit">Simpan profil</button><p class="account-note" id="profile-save-note">Profil disimpan di browser ini.</p></form>`;
+      if (section === 'login') {
+        accountDialogContent.innerHTML = `<form class="account-form" id="login-form"><label>Email<input name="email" type="email" autocomplete="username" placeholder="nama@email.com" required></label><label>Kata sandi<input name="password" type="password" autocomplete="current-password" required></label><button class="account-action" type="submit">Login</button><p class="account-note" id="login-note">Form login hanya tampilan dan belum terhubung ke layanan autentikasi.</p></form>`;
+        document.querySelector('#login-form').addEventListener('submit', (event) => {
+          event.preventDefault();
+          document.querySelector('#login-note').textContent = 'Login belum tersedia karena layanan autentikasi belum terhubung.';
+        });
+      } else if (section === 'profile') {
+        accountDialogContent.innerHTML = `<form class="account-form" id="profile-form"><div class="profile-photo-row"><span class="profile-photo-preview"><span class="profile-silhouette" id="profile-photo-placeholder" aria-hidden="true"></span><img id="profile-photo-preview" alt="Pratinjau foto profil" hidden></span><div class="profile-photo-actions"><button class="account-action" id="choose-profile-photo" type="button">Pilih foto</button><button class="profile-photo-remove" id="remove-profile-photo" type="button">Hapus foto</button><input id="profile-photo-file" type="file" accept="image/*" hidden><p class="account-note" style="flex-basis:100%">Gambar akan dipotong persegi dan diperkecil.</p></div></div><label>Nama tampilan<input id="profile-name-input" name="name" autocomplete="name" maxlength="60" required></label><label>Email<input id="profile-email-input" name="email" type="email" autocomplete="email" placeholder="nama@email.com"></label><button class="account-action" type="submit">Simpan profil</button><p class="account-note" id="profile-save-note">Profil disimpan di browser ini.</p></form>`;
         let pendingProfilePhoto = null;
         const photoPreview = document.querySelector('#profile-photo-preview');
-        const photoInitial = document.querySelector('#profile-photo-initial');
+        const photoPlaceholder = document.querySelector('#profile-photo-placeholder');
         const photoInput = document.querySelector('#profile-photo-file');
         const removePhotoButton = document.querySelector('#remove-profile-photo');
         const savedPhoto = localStorage.getItem('cryptobross-profile-photo');
-        photoInitial.textContent = (localStorage.getItem('cryptobross-profile-name') || 'Pengguna').trim().charAt(0).toLocaleUpperCase(CryptoBrossI18n.getLocale()) || 'P';
         if (savedPhoto) {
           photoPreview.src = savedPhoto;
           photoPreview.hidden = false;
-          photoInitial.hidden = true;
+          photoPlaceholder.hidden = true;
         }
         removePhotoButton.disabled = !savedPhoto;
         document.querySelector('#choose-profile-photo').addEventListener('click', () => photoInput.click());
@@ -964,7 +977,7 @@
             pendingProfilePhoto = canvas.toDataURL('image/webp', .82);
             photoPreview.src = pendingProfilePhoto;
             photoPreview.hidden = false;
-            photoInitial.hidden = true;
+            photoPlaceholder.hidden = true;
             removePhotoButton.disabled = false;
             saveNote.textContent = 'Pratinjau siap. Simpan profil untuk menyimpan foto.';
           } catch {
@@ -976,7 +989,7 @@
           pendingProfilePhoto = '';
           photoPreview.removeAttribute('src');
           photoPreview.hidden = true;
-          photoInitial.hidden = false;
+          photoPlaceholder.hidden = false;
           removePhotoButton.disabled = true;
           document.querySelector('#profile-save-note').textContent = 'Foto akan dihapus setelah profil disimpan.';
         });
@@ -1005,7 +1018,7 @@
         document.querySelector('#account-current-date').textContent = new Intl.DateTimeFormat(CryptoBrossI18n.getLocale(), { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(now);
         document.querySelector('#account-current-time').textContent = now.toLocaleTimeString(CryptoBrossI18n.getLocale(), { hour: '2-digit', minute: '2-digit', second: '2-digit' });
       } else if (section === 'settings') {
-        accountDialogContent.innerHTML = `<div class="account-form"><label class="account-toggle"><span><strong>Pembaruan otomatis</strong><small id="refresh-interval-description"></small></span><input id="auto-refresh-setting" type="checkbox"></label><label class="account-toggle"><span><strong>Mode gelap</strong><small>Gunakan tampilan gelap di halaman Cryptobross.</small></span><input id="dark-mode-setting" type="checkbox"></label><label>Interval pembaruan<select id="refresh-interval-setting"><option value="30000">Setiap 30 detik</option><option value="60000">Setiap 1 menit</option><option value="300000">Setiap 5 menit</option></select></label><label>Bahasa<select id="language-setting"><option value="id">Indonesia</option><option value="en">English</option><option value="zh">中文（简体）</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ar">العربية</option><option value="es">Español</option></select></label><p class="account-note" id="settings-save-note"></p></div>`;
+        accountDialogContent.innerHTML = `<div class="account-form"><label class="account-toggle"><span><strong>Pembaruan otomatis</strong><small id="refresh-interval-description"></small></span><input id="auto-refresh-setting" type="checkbox"></label><label class="account-toggle"><span><strong>Mode gelap</strong><small>Gunakan tampilan gelap di halaman Cryptobross.</small></span><input id="dark-mode-setting" type="checkbox"></label><label>Interval pembaruan<select id="refresh-interval-setting"><option value="1000">Setiap 1 detik</option><option value="30000">Setiap 30 detik</option><option value="60000">Setiap 1 menit</option><option value="300000">Setiap 5 menit</option></select></label><label>Bahasa<select id="language-setting"><option value="id">Indonesia</option><option value="en">English</option><option value="zh">中文（简体）</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="ar">العربية</option><option value="es">Español</option></select></label><p class="account-note" id="settings-save-note"></p></div>`;
         const autoRefreshSetting = document.querySelector('#auto-refresh-setting');
         const darkModeSetting = document.querySelector('#dark-mode-setting');
         const refreshIntervalSetting = document.querySelector('#refresh-interval-setting');
@@ -1042,15 +1055,19 @@
       } else {
         let savedDraft = {};
         try { savedDraft = JSON.parse(localStorage.getItem('cryptobross-customer-draft') || '{}'); } catch {}
-        accountDialogContent.innerHTML = `<p class="account-note" style="margin-bottom:14px">Layanan customer service belum terhubung ke server. Draf berikut hanya tersimpan di browser ini dan belum terkirim.</p><form class="account-form" id="customer-form"><label>Topik<select id="customer-topic"><option value="Akun">Akun</option><option value="Data pasar">Data pasar</option><option value="Informasi coin">Informasi coin</option><option value="Lainnya">Lainnya</option></select></label><label>Pesan<textarea id="customer-message" maxlength="1200" placeholder="Tuliskan pertanyaan atau masukan..."></textarea></label><button class="account-action" type="submit">Simpan draf</button><p class="account-note" id="customer-save-note">Draf belum disimpan.</p></form>`;
+        accountDialogContent.innerHTML = `<p class="account-note" style="margin-bottom:14px">Pesan akan dibuka di aplikasi email Anda; tekan Kirim untuk mengirimkannya.</p><form class="account-form" id="customer-form"><label>Topik<select id="customer-topic"><option value="Akun">Akun</option><option value="Data pasar">Data pasar</option><option value="Informasi coin">Informasi coin</option><option value="Lainnya">Lainnya</option></select></label><label>Pesan<textarea id="customer-message" maxlength="1200" placeholder="Tuliskan pertanyaan atau masukan..." required></textarea></label><button class="account-action" type="submit">Kirim email</button><p class="account-note" id="customer-save-note">Draf belum disimpan.</p></form>`;
         document.querySelector('#customer-topic').value = savedDraft.topic || 'Akun';
         document.querySelector('#customer-message').value = savedDraft.message || '';
         if (savedDraft.savedAt) document.querySelector('#customer-save-note').textContent = `Draf tersimpan ${savedDraft.savedAt}. Belum terkirim.`;
         document.querySelector('#customer-form').addEventListener('submit', (event) => {
           event.preventDefault();
           const savedAt = new Date().toLocaleString(CryptoBrossI18n.getLocale());
-          localStorage.setItem('cryptobross-customer-draft', JSON.stringify({ topic: document.querySelector('#customer-topic').value, message: document.querySelector('#customer-message').value.trim(), savedAt }));
-          document.querySelector('#customer-save-note').textContent = `Draf tersimpan ${savedAt}. Belum terkirim.`;
+          const topic = document.querySelector('#customer-topic').value;
+          const message = document.querySelector('#customer-message').value.trim();
+          localStorage.setItem('cryptobross-customer-draft', JSON.stringify({ topic, message, savedAt }));
+          const subject = encodeURIComponent(`Cryptobross - ${topic}`);
+          const body = encodeURIComponent(message);
+          window.location.href = `mailto:valenajh93@gmail.com?subject=${subject}&body=${body}`;
         });
       }
 
