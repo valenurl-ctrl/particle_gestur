@@ -13,13 +13,21 @@
       const updateResponsiveLayout = () => {
         const viewport = window.visualViewport;
         const width = viewport ? viewport.width : root.clientWidth;
+        root.style.setProperty('--visual-viewport-width', `${width}px`);
+        root.style.setProperty('--visual-viewport-height', `${viewport ? viewport.height : root.clientHeight}px`);
+        root.style.setProperty('--visual-viewport-offset-left', `${viewport ? viewport.offsetLeft : 0}px`);
+        root.style.setProperty('--visual-viewport-offset-top', `${viewport ? viewport.offsetTop : 0}px`);
         root.toggleAttribute('data-viewport-medium', width <= 1080);
         root.toggleAttribute('data-viewport-tablet', width <= 800);
         root.toggleAttribute('data-viewport-compact', width <= 560);
+        root.toggleAttribute('data-viewport-narrow', width <= 360);
       };
       updateResponsiveLayout();
       window.addEventListener('resize', updateResponsiveLayout, { passive: true });
-      if (window.visualViewport) window.visualViewport.addEventListener('resize', updateResponsiveLayout, { passive: true });
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', updateResponsiveLayout, { passive: true });
+        window.visualViewport.addEventListener('scroll', updateResponsiveLayout, { passive: true });
+      }
     })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,12 +69,13 @@
 
     * { box-sizing: border-box; }
     body {
-      margin: 0;
+      margin: 0 0 0 var(--visual-viewport-offset-left, 0px);
       background: var(--canvas);
       color: var(--ink);
       font-family: "DM Sans", sans-serif;
       font-size: 16px;
       min-height: 100vh;
+      width: var(--visual-viewport-width, 100%);
     }
     button, input { font: inherit; }
     button { color: inherit; }
@@ -353,6 +362,26 @@
     :root[data-viewport-compact] td:first-child { padding-left: 14px; }
     :root[data-viewport-compact] th:last-child,
     :root[data-viewport-compact] td:last-child { padding-right: 14px; }
+    :root[data-viewport-narrow] .topbar { padding-left: 10px; padding-right: 10px; }
+    :root[data-viewport-narrow] .brand { gap: 0; }
+    :root[data-viewport-narrow] .brand-name { display: none; }
+    :root[data-viewport-narrow] .top-actions { gap: 8px; }
+    :root[data-viewport-narrow] .layout { padding-left: 10px; padding-right: 10px; }
+    :root[data-viewport-narrow] .sidebar .side-nav:first-of-type { display: grid; }
+    :root[data-viewport-narrow] .sidebar .nav-item { font-size: 11px; gap: 5px; justify-content: flex-start; padding-left: 8px; padding-right: 8px; }
+    :root[data-viewport-narrow] .welcome { gap: 10px; }
+    :root[data-viewport-narrow] .date-chip { max-width: 100%; white-space: normal; }
+    :root[data-viewport-narrow] .stats { grid-template-columns: minmax(0, 1fr); }
+    :root[data-viewport-narrow] .stat-card:last-child { grid-column: auto; }
+    :root[data-viewport-narrow] .stat-card { min-width: 0; }
+    :root[data-viewport-narrow] .panel-head { align-items: flex-start; flex-wrap: wrap; gap: 8px; }
+    :root[data-viewport-narrow] .panel-head > div { min-width: 0; }
+    :root[data-viewport-narrow] .panel-heading { overflow-wrap: anywhere; }
+    :root[data-viewport-narrow] .toast { max-width: calc(var(--visual-viewport-width, 100vw) - 24px); }
+    :root[data-viewport-narrow] .footer-columns { grid-template-columns: minmax(0, 1fr); }
+    :root[data-viewport-narrow] .footer-column:last-child { grid-column: auto; }
+    :root[data-viewport-narrow] .profile-menu { max-width: calc(var(--visual-viewport-width, 100vw) - 16px); }
+    :root[data-viewport-narrow] .account-dialog { left: var(--visual-viewport-offset-left, 0px); margin: 0; max-height: min(720px, calc(var(--visual-viewport-height, 100vh) - 24px)); top: var(--visual-viewport-offset-top, 0px); width: min(460px, calc(var(--visual-viewport-width, 100vw) - 16px)); }
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }
   </style>
 </head>

@@ -13,11 +13,19 @@
       const updateResponsiveLayout = () => {
         const viewport = window.visualViewport;
         const width = viewport ? viewport.width : root.clientWidth;
+        root.style.setProperty('--visual-viewport-width', `${width}px`);
+        root.style.setProperty('--visual-viewport-offset-left', `${viewport ? viewport.offsetLeft : 0}px`);
+        root.style.setProperty('--visual-viewport-offset-top', `${viewport ? viewport.offsetTop : 0}px`);
+        root.style.setProperty('--visual-viewport-height', `${viewport ? viewport.height : root.clientHeight}px`);
         root.toggleAttribute('data-viewport-compact', width <= 560);
+        root.toggleAttribute('data-viewport-narrow', width <= 360);
       };
       updateResponsiveLayout();
       window.addEventListener('resize', updateResponsiveLayout, { passive: true });
-      if (window.visualViewport) window.visualViewport.addEventListener('resize', updateResponsiveLayout, { passive: true });
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', updateResponsiveLayout, { passive: true });
+        window.visualViewport.addEventListener('scroll', updateResponsiveLayout, { passive: true });
+      }
     })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,7 +58,8 @@
       background: var(--canvas);
       color: var(--ink);
       font: 16px/1.75 "DM Sans", sans-serif;
-      margin: 0;
+      margin: 0 0 0 var(--visual-viewport-offset-left, 0px);
+      width: var(--visual-viewport-width, 100%);
     }
     .topbar {
       align-items: center;
@@ -95,6 +104,11 @@
     :root[data-viewport-compact] .dek { font-size: 16px; }
     :root[data-viewport-compact] h2 { font-size: 21px; }
     :root[data-viewport-compact] .checklist { padding: 17px; }
+    :root[data-viewport-narrow] .topbar { align-items: flex-start; flex-direction: column; gap: 5px; }
+    :root[data-viewport-narrow] .back-link { max-width: 100%; overflow-wrap: anywhere; }
+    :root[data-viewport-narrow] main { padding-left: 12px; padding-right: 12px; }
+    :root[data-viewport-narrow] .notice { padding: 14px; }
+    :root[data-viewport-narrow] .checklist { padding: 14px; }
   </style>
   <script>
     if (localStorage.getItem('cryptobross-theme') === 'dark') document.documentElement.dataset.theme = 'dark';
