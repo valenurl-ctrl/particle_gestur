@@ -7,6 +7,21 @@
   <meta name="description" content="Jelajahi pasar cryptocurrency, pantau aset favorit, dan pelajari dasar investasi crypto bersama Cryptobross.">
   <link rel="canonical" href="https://vcryptoknowledge.com/">
   <title>Cryptobross — Jelajahi Crypto</title>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const updateResponsiveLayout = () => {
+        const viewport = window.visualViewport;
+        const width = viewport ? viewport.width : root.clientWidth;
+        root.toggleAttribute('data-viewport-medium', width <= 1080);
+        root.toggleAttribute('data-viewport-tablet', width <= 800);
+        root.toggleAttribute('data-viewport-compact', width <= 560);
+      };
+      updateResponsiveLayout();
+      window.addEventListener('resize', updateResponsiveLayout, { passive: true });
+      if (window.visualViewport) window.visualViewport.addEventListener('resize', updateResponsiveLayout, { passive: true });
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -303,43 +318,41 @@
     :root[data-theme="dark"] .footer-column h2 { color: #eef5ef; }
     :root[data-theme="dark"] .footer-column p, :root[data-theme="dark"] .footer-column a { color: #bdc9c1; }
     :root[data-theme="dark"] .footer-legal { border-color: rgba(255, 255, 255, .16); color: #a2afa6; }
-    @media (max-width: 1080px) {
-      .layout { gap: 20px; grid-template-columns: 175px minmax(0, 1fr); padding-left: 3vw; padding-right: 3vw; }
-      .topbar { padding-left: 3vw; padding-right: 3vw; }
-    }
-    @media (max-width: 800px) {
-      .layout { display: block; padding: 25px 20px 40px; }
-      .site-footer-inner { padding-left: 20px; padding-right: 20px; }
-      .sidebar { margin-bottom: 16px; position: static; }
-      .sidebar > .side-label, .sidebar-note, .sidebar .side-nav:not(:first-of-type) { display: none; }
-      .sidebar .side-nav:first-of-type { background: white; border: 1px solid var(--line); border-radius: var(--radius); display: flex; gap: 4px; padding: 4px; }
-      .sidebar .nav-item { justify-content: center; }
-      .back-market-button { top: 74px; }
-      .topbar { height: 64px; padding: 0 20px; }
-      .market-status { font-size: 0; gap: 0; }
-      .status-dot { height: 8px; width: 8px; }
-    }
-    @media (max-width: 560px) {
-      .layout { padding-left: 14px; padding-right: 14px; }
-      .site-footer-inner { padding-left: 14px; padding-right: 14px; }
-      .footer-columns { gap: 24px 16px; grid-template-columns: 1fr 1fr; }
-      .footer-column:last-child { grid-column: span 2; }
-      .topbar { padding: 0 14px; }
-      .welcome { align-items: flex-start; flex-direction: column; gap: 15px; }
-      h1 { font-size: 25px; }
-      .stats { gap: 9px; grid-template-columns: 1fr 1fr; }
-      .stat-card { min-height: 94px; padding: 13px; }
-      .stat-card:last-child { grid-column: span 2; }
-      .asset-view .detail-panel { padding: 17px; }
-      .asset-view .chart-shell { height: 155px; }
-      .asset-view .detail-stats { grid-template-columns: 1fr 1fr; }
-      .stat-value strong { font-size: 18px; }
-      .market-tools { align-items: stretch; flex-direction: column; padding-left: 14px; padding-right: 14px; }
-      .search { width: 100%; }
-      .panel-head { padding-left: 14px; padding-right: 14px; }
-      th:first-child, td:first-child { padding-left: 14px; }
-      th:last-child, td:last-child { padding-right: 14px; }
-    }
+    :root[data-viewport-medium] .layout { gap: 20px; grid-template-columns: 175px minmax(0, 1fr); padding-left: 3vw; padding-right: 3vw; }
+    :root[data-viewport-medium] .topbar { padding-left: 3vw; padding-right: 3vw; }
+    :root[data-viewport-tablet] .layout { display: block; padding: 25px 20px 40px; }
+    :root[data-viewport-tablet] .site-footer-inner { padding-left: 20px; padding-right: 20px; }
+    :root[data-viewport-tablet] .sidebar { margin-bottom: 16px; position: static; }
+    :root[data-viewport-tablet] .sidebar > .side-label,
+    :root[data-viewport-tablet] .sidebar-note,
+    :root[data-viewport-tablet] .sidebar .side-nav:not(:first-of-type) { display: none; }
+    :root[data-viewport-tablet] .sidebar .side-nav:first-of-type { background: white; border: 1px solid var(--line); border-radius: var(--radius); display: flex; gap: 4px; padding: 4px; }
+    :root[data-viewport-tablet] .sidebar .nav-item { justify-content: center; }
+    :root[data-viewport-tablet] .back-market-button { top: 74px; }
+    :root[data-viewport-tablet] .topbar { height: 64px; padding: 0 20px; }
+    :root[data-viewport-tablet] .market-status { font-size: 0; gap: 0; }
+    :root[data-viewport-tablet] .status-dot { height: 8px; width: 8px; }
+    :root[data-viewport-compact] .layout { padding-left: 14px; padding-right: 14px; }
+    :root[data-viewport-compact] .site-footer-inner { padding-left: 14px; padding-right: 14px; }
+    :root[data-viewport-compact] .footer-columns { gap: 24px 16px; grid-template-columns: 1fr 1fr; }
+    :root[data-viewport-compact] .footer-column:last-child { grid-column: span 2; }
+    :root[data-viewport-compact] .topbar { padding: 0 14px; }
+    :root[data-viewport-compact] .welcome { align-items: flex-start; flex-direction: column; gap: 15px; }
+    :root[data-viewport-compact] h1 { font-size: 25px; }
+    :root[data-viewport-compact] .stats { gap: 9px; grid-template-columns: 1fr 1fr; }
+    :root[data-viewport-compact] .stat-card { min-height: 94px; padding: 13px; }
+    :root[data-viewport-compact] .stat-card:last-child { grid-column: span 2; }
+    :root[data-viewport-compact] .asset-view .detail-panel { padding: 17px; }
+    :root[data-viewport-compact] .asset-view .chart-shell { height: 155px; }
+    :root[data-viewport-compact] .asset-view .detail-stats { grid-template-columns: 1fr 1fr; }
+    :root[data-viewport-compact] .stat-value strong { font-size: 18px; }
+    :root[data-viewport-compact] .market-tools { align-items: stretch; flex-direction: column; padding-left: 14px; padding-right: 14px; }
+    :root[data-viewport-compact] .search { width: 100%; }
+    :root[data-viewport-compact] .panel-head { padding-left: 14px; padding-right: 14px; }
+    :root[data-viewport-compact] th:first-child,
+    :root[data-viewport-compact] td:first-child { padding-left: 14px; }
+    :root[data-viewport-compact] th:last-child,
+    :root[data-viewport-compact] td:last-child { padding-right: 14px; }
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }
   </style>
 </head>
@@ -1141,7 +1154,9 @@
       renderDetail();
     }));
     document.querySelector('#learn-button').addEventListener('click', () => showToast('Crypto adalah aset digital yang berjalan di jaringan blockchain. Pelajari risiko sebelum mengambil keputusan.'));
-    window.addEventListener('resize', () => { const coin = coins.find((item) => item.id === selectedId); if (coin) drawChart(coin); });
+    const redrawSelectedChart = () => { const coin = coins.find((item) => item.id === selectedId); if (coin) drawChart(coin); };
+    window.addEventListener('resize', redrawSelectedChart);
+    if (window.visualViewport) window.visualViewport.addEventListener('resize', redrawSelectedChart);
 
     document.querySelector('#current-date').textContent = new Intl.DateTimeFormat(CryptoBrossI18n.getLocale(), { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date());
     document.querySelector('#connection-label').textContent = `Live · ${formatRefreshInterval()}`;
