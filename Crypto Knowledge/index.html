@@ -95,10 +95,13 @@
       backdrop-filter: blur(16px);
     }
     .brand { align-items: center; display: flex; gap: 11px; text-decoration: none; }
+    .brand-area { align-items: center; display: flex; gap: 11px; position: relative; }
     .brand-mark {
       background: var(--ink);
+      border: 0;
       border-radius: 12px;
       color: var(--green-bright);
+      cursor: pointer;
       display: grid;
       font-family: "Space Grotesk", sans-serif;
       font-size: 13px;
@@ -109,6 +112,37 @@
       text-transform: lowercase;
       width: 36px;
     }
+    .brand-mark:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+    .brand-menu {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 3px;
+      left: 0;
+      max-width: calc(var(--visual-viewport-width, 100vw) - 16px);
+      padding: 8px;
+      position: absolute;
+      top: calc(100% + 11px);
+      width: 220px;
+      z-index: 8;
+    }
+    .brand-menu[hidden] { display: none; }
+    .brand-menu-item {
+      background: transparent;
+      border: 0;
+      border-radius: 9px;
+      color: var(--ink);
+      cursor: pointer;
+      display: block;
+      font-size: 13px;
+      padding: 10px 11px;
+      text-align: left;
+      text-decoration: none;
+      width: 100%;
+    }
+    .brand-menu-item:hover, .brand-menu-item:focus-visible { background: var(--surface-soft); outline: none; }
     .brand-name { font-family: "Space Grotesk", sans-serif; font-size: 17px; font-weight: 700; letter-spacing: -.4px; }
     .brand-crypto { color: #17211d; }
     .brand-word-green { color: #146c4b; }
@@ -299,7 +333,7 @@
     :root[data-theme="dark"] .brand-mark { background: #2b3930; }
     :root[data-theme="dark"] .brand-name { background: #f4f6f2; border-radius: 7px; padding: 3px 6px; }
     :root[data-theme="dark"] .avatar { background: #2b3930; }
-    :root[data-theme="dark"] .profile-menu, :root[data-theme="dark"] .account-dialog { background: var(--surface); border-color: var(--line); box-shadow: var(--shadow); }
+    :root[data-theme="dark"] .profile-menu, :root[data-theme="dark"] .brand-menu, :root[data-theme="dark"] .account-dialog { background: var(--surface); border-color: var(--line); box-shadow: var(--shadow); }
     :root[data-theme="dark"] .account-form label, :root[data-theme="dark"] .profile-photo-remove { color: var(--muted); }
     :root[data-theme="dark"] .account-card, :root[data-theme="dark"] .account-toggle { background: var(--surface-soft); border-color: var(--line); }
     :root[data-theme="dark"] .nav-item { color: var(--muted); }
@@ -389,9 +423,18 @@
 <body>
   <div class="app">
     <header class="topbar">
-      <a class="brand" href="#" aria-label="Cryptobross beranda">
-        <span class="brand-mark"><span class="brand-monogram"><span class="brand-c">c</span><span class="brand-b">b</span></span></span><span class="brand-name"><span class="brand-crypto">crypto</span><span class="brand-word-green">bross</span></span>
-      </a>
+      <div class="brand-area">
+        <button class="brand-mark" id="brand-menu-trigger" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="brand-menu"><span class="brand-monogram"><span class="brand-c">c</span><span class="brand-b">b</span></span></button>
+        <nav class="brand-menu" id="brand-menu" aria-label="Menu navigasi Cryptobross" hidden>
+          <a class="brand-menu-item" href="panduan-investasi.html">Baca panduan</a>
+          <button class="brand-menu-item" type="button" data-brand-action="basics">Dasar crypto</button>
+          <button class="brand-menu-item" type="button" data-brand-action="profile">Profil</button>
+          <button class="brand-menu-item" type="button" data-brand-action="login">Login</button>
+          <button class="brand-menu-item" type="button" data-brand-action="customer">Customer Service</button>
+          <a class="brand-menu-item" href="#footer-maker">Pembuat</a>
+        </nav>
+        <a class="brand-name" href="#" aria-label="Cryptobross beranda"><span class="brand-crypto">crypto</span><span class="brand-word-green">bross</span></a>
+      </div>
       <div class="top-actions">
         <div class="market-status" title="Harga dan grafik diperbarui otomatis setiap 60 detik"><span class="status-dot"></span><span id="connection-label">Menghubungkan pasar</span></div>
         <div class="profile-anchor" id="profile-anchor">
@@ -490,7 +533,7 @@
     <div class="site-footer-inner">
       <div class="footer-columns">
         <section class="footer-column"><h2>Email</h2><p><a href="mailto:valenajh93@gmail.com">valenajh93@gmail.com</a></p></section>
-        <section class="footer-column"><h2>Pembuat</h2><p>Eliezer Valentino Paembonan<br>Proyek edukasi aset digital</p></section>
+        <section class="footer-column" id="footer-maker"><h2>Pembuat</h2><p>Eliezer Valentino Paembonan<br>Proyek edukasi aset digital</p></section>
         <section class="footer-column"><h2>Sosial Media</h2><nav class="footer-socials" aria-label="Sosial media"><a href="https://www.instagram.com/v4lenn_nn?stkn=em5hNmg5N292cGE=" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="http://tiktok.com/@v4lenn_nnn" target="_blank" rel="noopener noreferrer">TikTok ↗</a></nav></section>
       </div>
       <p class="footer-legal">© 2026 Cryptobross. Konten disediakan untuk edukasi.</p>
@@ -940,8 +983,15 @@
     const profileAnchor = document.querySelector('#profile-anchor');
     const profileTrigger = document.querySelector('#profile-trigger');
     const profileMenu = document.querySelector('#profile-menu');
+    const brandMenuTrigger = document.querySelector('#brand-menu-trigger');
+    const brandMenu = document.querySelector('#brand-menu');
     const accountDialog = document.querySelector('#account-dialog');
     const accountDialogContent = document.querySelector('#account-dialog-content');
+
+    function closeBrandMenu() {
+      brandMenu.hidden = true;
+      brandMenuTrigger.setAttribute('aria-expanded', 'false');
+    }
 
     function closeProfileMenu() {
       profileMenu.hidden = true;
@@ -1128,6 +1178,7 @@
     }
 
     profileTrigger.addEventListener('click', () => {
+      closeBrandMenu();
       const opening = profileMenu.hidden;
       profileMenu.hidden = !opening;
       profileTrigger.setAttribute('aria-expanded', String(opening));
@@ -1141,12 +1192,41 @@
         profileMenu.querySelector('[role="menuitem"]').focus();
       }
     });
+    brandMenuTrigger.addEventListener('click', () => {
+      closeProfileMenu();
+      const opening = brandMenu.hidden;
+      brandMenu.hidden = !opening;
+      brandMenuTrigger.setAttribute('aria-expanded', String(opening));
+      if (opening) brandMenu.querySelector('.brand-menu-item').focus();
+    });
+    brandMenu.addEventListener('click', (event) => {
+      const menuItem = event.target.closest('[data-brand-action]');
+      if (!menuItem) {
+        if (event.target.closest('a')) closeBrandMenu();
+        return;
+      }
+      closeBrandMenu();
+      if (menuItem.dataset.brandAction === 'basics') {
+        showToast('Crypto adalah aset digital yang berjalan di jaringan blockchain. Pelajari risiko sebelum mengambil keputusan.');
+        brandMenuTrigger.focus();
+      } else {
+        openAccountSection(menuItem.dataset.brandAction);
+      }
+    });
     profileMenu.addEventListener('click', (event) => {
       const menuItem = event.target.closest('[data-account-section]');
       if (menuItem) openAccountSection(menuItem.dataset.accountSection, menuItem);
     });
     document.addEventListener('click', (event) => { if (!profileAnchor.contains(event.target)) closeProfileMenu(); });
-    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeProfileMenu(); });
+    document.addEventListener('click', (event) => { if (!brandMenu.contains(event.target) && !brandMenuTrigger.contains(event.target)) closeBrandMenu(); });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        const brandMenuWasOpen = !brandMenu.hidden;
+        closeProfileMenu();
+        closeBrandMenu();
+        if (brandMenuWasOpen) brandMenuTrigger.focus();
+      }
+    });
     document.querySelector('#account-dialog-close').addEventListener('click', () => accountDialog.close());
     accountDialog.addEventListener('click', (event) => { if (event.target === accountDialog) accountDialog.close(); });
     accountDialog.addEventListener('close', closeProfileMenu);

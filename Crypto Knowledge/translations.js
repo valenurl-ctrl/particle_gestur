@@ -15,6 +15,8 @@
     ['Harga dan grafik diperbarui otomatis setiap 60 detik', 'Prices and charts refresh automatically every 60 seconds', '价格和图表每 60 秒自动更新', '価格とチャートは60秒ごとに自動更新されます', '가격과 차트가 60초마다 자동 업데이트됩니다', 'يتم تحديث الأسعار والرسوم البيانية تلقائيًا كل 60 ثانية', 'Los precios y gráficos se actualizan automáticamente cada 60 segundos'],
     ['Menghubungkan pasar', 'Connecting to market', '正在连接市场', '市場に接続中', '시장에 연결 중', 'جارٍ الاتصال بالسوق', 'Conectando con el mercado'],
     ['Buka menu profil', 'Open profile menu', '打开个人资料菜单', 'プロフィールメニューを開く', '프로필 메뉴 열기', 'فتح قائمة الملف الشخصي', 'Abrir menú del perfil'],
+    ['Buka menu navigasi', 'Open navigation menu', '打开导航菜单', 'ナビゲーションメニューを開く', '탐색 메뉴 열기', 'فتح قائمة التنقل', 'Abrir menú de navegación'],
+    ['Menu navigasi Cryptobross', 'Cryptobross navigation menu', 'Cryptobross 导航菜单', 'Cryptobross ナビゲーションメニュー', 'Cryptobross 탐색 메뉴', 'قائمة تنقل Cryptobross', 'Menú de navegación de Cryptobross'],
     ['Menu profil', 'Profile menu', '个人资料菜单', 'プロフィールメニュー', '프로필 메뉴', 'قائمة الملف الشخصي', 'Menú del perfil'],
     ['Pengguna', 'User', '用户', 'ユーザー', '사용자', 'مستخدم', 'Usuario'],
     ['Profil lokal', 'Local profile', '本地个人资料', 'ローカルプロフィール', '로컬 프로필', 'ملف شخصي محلي', 'Perfil local'],
